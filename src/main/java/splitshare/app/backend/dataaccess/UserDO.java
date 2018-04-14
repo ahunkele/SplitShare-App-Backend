@@ -1,5 +1,85 @@
 package splitshare.app.backend.dataaccess;
 
-public interface UserDO {
+import java.io.Serializable;
+
+public class UserDO implements Serializable
+{
+
+    private static final long serialVersionUID = -57758741951258636L;
+
+    private String uid;
+    private String firstName;
+    private String lastName;
+    private String email;
+    private String password;
+    private String phoneNumber;
+
+    public String getUID()
+    {
+        return this.uid;
+    }
+
+    public void setUID(final String uid)
+    {
+        this.uid = uid;
+    }
+
+    public String getFirstName()
+    {
+        return this.firstName;
+    }
+
+    public void setFirstName(final String firstName)
+    {
+        this.firstName = firstName;
+    }
+
+    public String getLastName()
+    {
+        return this.lastName;
+    }
+
+    public void setLastName(final String lastName)
+    {
+        this.lastName = lastName;
+    }
+
+    public String getEmail()
+    {
+        return this.email;
+    }
+
+    public void setEmail(final String email)
+    {
+        this.email = email;
+    }
+
+    public String getPhoneNumber()
+    {
+        return this.phoneNumber;
+    }
+
+    public void setPhoneNumber(final String phoneNumber)
+    {
+        this.phoneNumber = phoneNumber;
+
+    }
+
+    public String getPassword()
+    {
+        return this.password;
+    }
+
+    public void setPassword(final String password)
+    {
+        this.password = password;
+    }
+    
+    @Override
+    public boolean equals(Object other) {
+        return (other instanceof UserDO) && (uid != null)
+             ? uid.equals(((UserDO) other).getUID())
+             : (other == this);
+    }
 
 }
