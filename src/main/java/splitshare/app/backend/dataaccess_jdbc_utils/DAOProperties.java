@@ -57,4 +57,11 @@ public class DAOProperties
 
         return property;
     }
+
+    public static void main(final String[] args)
+    {
+        final DAOProperties properties = new DAOProperties("splitshare.jdbc");
+        System.out.println(properties.getProperty("url", true));
+
+    }
 }
