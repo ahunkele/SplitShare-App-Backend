@@ -10,7 +10,7 @@ public interface UserDAO
 
     /**
      * Returns the user from the database matching the given ID, otherwise null.
-     * 
+     *
      * @param id
      *            The ID of the user to be returned.
      * @return The user from the database matching the given ID, otherwise null.

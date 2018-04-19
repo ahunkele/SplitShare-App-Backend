@@ -4,6 +4,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+import splitshare.app.backend.dataaccess.UserDO;
+import splitshare.app.backend.dataaccess_jdbc.DAOFactory;
+import splitshare.app.backend.dataaccess_jdbc.UserDAO;
+
 public class DAOProperties
 {
 
@@ -60,8 +64,14 @@ public class DAOProperties
 
     public static void main(final String[] args)
     {
-        final DAOProperties properties = new DAOProperties("splitshare.jdbc");
-        System.out.println(properties.getProperty("url", true));
+        final DAOFactory javabase = DAOFactory.getInstance("splitshare.jdbc");
+        System.out.println("DAOFactory successfully obtained: " + javabase);
+
+        // Obtain UserDAO.
+        final UserDAO userDAO = javabase.getUserDAO();
+        final UserDO user = userDAO.findByUID(1L);
+
+        System.out.println(user.getEmail());
 
     }
 }

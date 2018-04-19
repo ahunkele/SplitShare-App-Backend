@@ -7,19 +7,19 @@ public class UserDO implements Serializable
 
     private static final long serialVersionUID = -57758741951258636L;
 
-    private String uid;
+    private Long uid;
     private String firstName;
     private String lastName;
     private String email;
     private String password;
     private String phoneNumber;
 
-    public String getUID()
+    public Long getUID()
     {
         return this.uid;
     }
 
-    public void setUID(final String uid)
+    public void setUID(final Long uid)
     {
         this.uid = uid;
     }
@@ -74,12 +74,11 @@ public class UserDO implements Serializable
     {
         this.password = password;
     }
-    
+
     @Override
-    public boolean equals(Object other) {
-        return (other instanceof UserDO) && (uid != null)
-             ? uid.equals(((UserDO) other).getUID())
-             : (other == this);
+    public boolean equals(final Object other)
+    {
+        return (other instanceof UserDO) && (uid != null) ? uid.equals(((UserDO) other).getUID()) : (other == this);
     }
 
 }
