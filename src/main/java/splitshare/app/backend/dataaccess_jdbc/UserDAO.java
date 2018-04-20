@@ -51,12 +51,13 @@ public interface UserDAO
      *
      * @param user
      *            The user to be created in the database.
+     * @return
      * @throws IllegalArgumentException
      *             If the user ID is not null.
      * @throws DAOException
      *             If something fails at database level.
      */
-    public void create(final UserDO user) throws DAOException;
+    public String create(final UserDO user) throws DAOException;
 
     /**
      * Update the given user in the database. The user ID must not be null,

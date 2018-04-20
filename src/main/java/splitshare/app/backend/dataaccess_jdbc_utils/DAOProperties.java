@@ -69,9 +69,15 @@ public class DAOProperties
 
         // Obtain UserDAO.
         final UserDAO userDAO = javabase.getUserDAO();
-        final UserDO user = userDAO.findByUID(1L);
 
-        System.out.println(user.getEmail());
+        final UserDO user = new UserDO();
+        user.setFirstName("andy");
+        user.setLastName("hunkele");
+        user.setEmail("ahunkele@gmail.com");
+        user.setPassword("airking3");
+        user.setPhoneNumber("8168780095");
+
+        System.out.println(userDAO.create(user));
 
     }
 }

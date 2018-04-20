@@ -1,27 +1,23 @@
 package splitshare.app.backend.dataaccess;
 
 import java.io.Serializable;
+import java.util.UUID;
 
 public class UserDO implements Serializable
 {
 
     private static final long serialVersionUID = -57758741951258636L;
 
-    private Long uid;
+    private final String uid = UUID.randomUUID().toString();
     private String firstName;
     private String lastName;
     private String email;
     private String password;
     private String phoneNumber;
 
-    public Long getUID()
+    public String getUID()
     {
         return this.uid;
-    }
-
-    public void setUID(final Long uid)
-    {
-        this.uid = uid;
     }
 
     public String getFirstName()
